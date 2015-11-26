@@ -12,25 +12,65 @@
 var santaApp = {};
 
 // This array will actually be empty, but for the purpose of testing I've added names
-santaApp.names = ['wes','hannah','kait','snickers'];
+santaApp.names = ['wes','hannah','kait'];
+
+// This variable will hold the final matches
+santaApp.finalMatch = [];
 
 // Create distribute function that will loop through the names in the array and assign each one to another name (but not itself, and can't use a name twice)
 
-santaApp.distribute = function() {
+var counter = 0;
+
+santaApp.createPair = function(giverArray, reciverArray){
+  //the variables below are used in an if statement to make sure that the indexes are not the same number (the indexes represesnt a name from the arrays)
+
+  //recursion function calls itself inside itself
+  var firstIndex = Math.floor(Math.random() * giverArray.length);
+  var secondIndex = Math.floor(Math.random() * reciverArray.length);
+  var giftGiver = giverArray.splice(firstIndex, 1);
+  var giftReciever = reciverArray.splice(secondIndex, 1);
   
-  var availableNames = santaApp.names.slice();
+  //don't use splice above 
 
-  santaApp.pickedNames = santaApp.names.map(function(name) {
-    // pick a random person from the array
-    // remove that person from the array because they are taken
-    // Make sure that person ins't the same person (wes has wes)
-    // return 'wes has kait'
-    return { giver : name, reciver : 'You gotta do this part'}
-  });
+  // counter++;
+  // if (firstIndex === secondIndex && counter < 100) {
+  //   return santaApp.createPair(giverArray, reciverArray);
+  // }
 
-  console.log(santaApp.pickedNames); // final aray with the matches
+
+  if (giftGiver === giftReciever) {
+    var originalReciver = santaApp.finalMatch[0].reciver;
+     santaApp.finalMatch[0].reciver = giftReciever;
+     return { 
+    giver : giftGiver[0], 
+    reciver : originalReciver
+    }
+  } 
+
+  return { 
+    giver : giftGiver[0], 
+    reciver : giftReciever[0]
+  }
 };
-// will need to use Math.random and "probably a couple of if statements"
+
+santaApp.arrayCopy = function(array2copy) {
+  var copy = [];
+  for (var i = 0; i < array2copy.length; i++) {
+    copy.push(array2copy[i]);
+  };
+  return copy;
+};
+
+santaApp.matchAllUsers = function() {
+  var givers = santaApp.arrayCopy(santaApp.names);
+  var recievers = santaApp.arrayCopy(santaApp.names);
+  while(givers.length > 0) {
+    var pairing = santaApp.createPair(givers, recievers);
+    santaApp.finalMatch.push(pairing);
+  }
+  console.log(santaApp.finalMatch);
+};
+
 
 
 
