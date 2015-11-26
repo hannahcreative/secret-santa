@@ -27,17 +27,13 @@ santaApp.createPair = function(giverArray, reciverArray){
   //recursion function calls itself inside itself
   var firstIndex = Math.floor(Math.random() * giverArray.length);
   var secondIndex = Math.floor(Math.random() * reciverArray.length);
+  counter++;
+  if (firstIndex === secondIndex && counter < 100) {
+    return santaApp.createPair(giverArray, reciverArray);
+  }
+
   var giftGiver = giverArray.splice(firstIndex, 1);
   var giftReciever = reciverArray.splice(secondIndex, 1);
-  
-  //don't use splice above 
-
-  // counter++;
-  // if (firstIndex === secondIndex && counter < 100) {
-  //   return santaApp.createPair(giverArray, reciverArray);
-  // }
-
-
   if (giftGiver === giftReciever) {
     var originalReciver = santaApp.finalMatch[0].reciver;
      santaApp.finalMatch[0].reciver = giftReciever;
