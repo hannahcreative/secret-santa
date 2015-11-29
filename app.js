@@ -12,7 +12,7 @@
 var santaApp = {};
 
 // This array will actually be empty, but for the purpose of testing I've added names
-santaApp.names = ['wes','hannah','kait'];
+santaApp.names = ['wes','hannah','kait','snickers'];
 
 // This variable will hold the final matches
 santaApp.finalMatch = [];
