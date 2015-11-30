@@ -20,7 +20,6 @@ santaApp.finalMatch = [];
 // Create distribute function that will loop through the names in the array and assign each one to another name (but not itself, and can't use a name twice)
 
 var counter = 0;
-
 santaApp.createPair = function(giverArray, reciverArray){
   //the variables below are used in an if statement to make sure that the indexes are not the same number (the indexes represesnt a name from the arrays)
 
