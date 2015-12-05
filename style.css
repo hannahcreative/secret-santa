@@ -45,27 +45,33 @@ button {
   border-radius: 3px;
 }
 
+button.end {
+  clear: both;
+}
+
 .input-stuff {
   width: 100%;
-  display: none;
 }
 .input-stuff p {
   font-size: 2rem;
 }
 
 form {
-  text-align: center;
-  padding-bottom: 20px;
+  float: left;
+  width: 40%;
 }
 form input {
   padding: 15px 50px 15px 15px;
   font-size: 2rem;
-  width: 100%;
 }
 form input:focus {
   outline: 4px auto #ff0000;
 }
 
+.p-list {
+  width: 36%;
+  float: left;
+}
 .p-list p {
   background: #ff0000;
   color: #fff;

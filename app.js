@@ -69,8 +69,25 @@ santaApp.matchAllUsers = function() {
     var pairing = santaApp.createPair(givers, recievers);
     santaApp.finalMatch.push(pairing);
   }
-  console.log(santaApp.finalMatch);
+  console.log(santaApp.finalMatch); // call santaApp.mailUsers()
+  santaApp.mailUsers(); 
 };
+
+
+santaApp.mailUsers = function() {
+  $.ajax({
+    type: "POST",
+    url: './send.php',
+    data: {
+      matches : santaApp.finalMatch
+    },
+    success: function(data){
+      // here we check if the emails send propertly 
+      console.log(data); // did it work?
+    },
+    dataType: 'json'
+  });
+}
 
 santaApp.reSize = function() {
   // $('header').css({ scale: 0.5 });
@@ -87,14 +104,14 @@ santaApp.reSize = function() {
 
 santaApp.init = function() {
 
-  $('button.start').click(function() {
-    $('.input-stuff').slideDown('slow');
-    $('header p').hide();
-    $('button.start').toggle();
-    santaApp.reSize();
-    // $('header').css({ scale: 0.5 });
-    $
-  }); 
+  // $('button.start').click(function() {
+  //   $('.input-stuff').slideDown('slow');
+  //   $('header p').hide();
+  //   $('button.start').toggle();
+  //   santaApp.reSize();
+  //   // $('header').css({ scale: 0.5 });
+  //   $
+  // }); 
 
   $('form').on('submit', function(event) {
     event.preventDefault();
@@ -106,6 +123,11 @@ santaApp.init = function() {
         $('input').val('');
     };
   });
+
+  $('button.end').click(function(){
+    santaApp.matchAllUsers();
+    alert('Wait for the magic!');
+  })
 };
 
 $(document).ready(function(){

@@ -48,9 +48,13 @@ button {
   border-radius: 3px;
 }
 
+button.end {
+  clear:both;
+}
+
 .input-stuff {
   width: 100%;
-  display: none;
+  // display: none;
 
     p {
       font-size: 2rem;
@@ -58,15 +62,17 @@ button {
 }
 
 form {
-  text-align: center;
-  padding-bottom: 20px;
-  // margin-left: 30px;
-  // display:none;
+  // text-align: center;
+  // padding-bottom: 20px;
+    float: left;
+    width: 40%;
   
   input {
     padding: 15px 50px 15px 15px;
     font-size: 2rem;
-    width: 100%;
+    // width: 100%;
+    // background: url('i/plus.png') no-repeat;
+    // background-position: right;
     // float: left;
 
     &:focus {
@@ -78,6 +84,8 @@ form {
  .p-list {
   // margin: 0 auto;
   // width: 15rem;
+    width: 36%;
+    float: left;
   // display: none;
 
     p {
