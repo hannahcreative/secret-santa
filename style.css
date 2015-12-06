@@ -8,7 +8,7 @@ body {
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -56,6 +56,9 @@ button.submit:hover {
   font-size: 2rem;
 }
 
+form {
+  position: relative;
+}
 form input {
   padding: 15px 15px 15px 15px;
   font-size: 2rem;
@@ -89,13 +92,17 @@ form input:focus {
 
 span.addAnother {
   font-size: 47px;
-  line-height: 5px;
-  position: relative;
+  /* line-height: 5px; */
+  position: absolute;
   right: 52px;
-  top: 7px;
+  bottom: 4px;
   color: #919191;
 }
 
+.p-list {
+  width: 85%;
+  margin: 0 auto;
+}
 .p-list p {
   background: #ff0000;
   color: #fff;

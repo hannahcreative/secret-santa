@@ -102,6 +102,8 @@ santaApp.init = function() {
   //   $
   // }); 
 
+  // $('.p-list').hide();
+
   $('form').on('submit', function(event) {
     event.preventDefault();
       if ($('input').val() !== '') {

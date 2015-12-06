@@ -8,7 +8,7 @@ body {
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -75,6 +75,7 @@ form {
   // padding-bottom: 20px;
     // float: left;
     // width: 40%;
+    position: relative;
   
   input {
     padding: 15px 15px 15px 15px;
@@ -108,19 +109,16 @@ form {
 
  span.addAnother {
     font-size: 47px;
-    line-height: 5px;
-    position: relative;
+    /* line-height: 5px; */
+    position: absolute;
     right: 52px;
-    top: 7px;
+    bottom: 4px;
     color: #919191;
  }
 
  .p-list {
-  // margin: 0 auto;
-  // width: 15rem;
-    // width: 36%;
-    // float: left;
-  // display: none;
+     width: 85%;
+    margin: 0 auto;
 
     p {
       background: #ff0000;
