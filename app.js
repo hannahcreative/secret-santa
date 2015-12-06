@@ -1,17 +1,6 @@
-// **Ideas** 
-
-//  - User also set's gift $ limit. (Which is stored and included in the email)
-//  - (maybe set date as well?)
-//  - Use Etsy API to pull in gift suggetions? (active.js endpoint)
-
-// **Notes** 
-
-// End up with something like this to grab the email addresses from
-// var names = [{ giver :'wes', receiver : 'kait' }, { giver :'hannah', receiver : 'snickers' }]
-
 var santaApp = {};
 
-// This array will actually be empty, but for the purpose of testing I've added names
+// Empty array to hold the inputted names
 santaApp.names = [];
 
 // This variable will hold the final matches
@@ -45,7 +34,7 @@ santaApp.createPair = function(giverArray, receiverArray){
     giver : giftGiver, 
     receiver : originalReceiver
     }
-    console.log('inside the if');
+    // console.log('inside the if');
   } 
 
   return { 
@@ -69,7 +58,7 @@ santaApp.matchAllUsers = function() {
     var pairing = santaApp.createPair(givers, recievers);
     santaApp.finalMatch.push(pairing);
   }
-  console.log(santaApp.finalMatch); // call santaApp.mailUsers()
+  console.log(santaApp.finalMatch);
   santaApp.mailUsers(); 
 };
 
@@ -82,7 +71,7 @@ santaApp.mailUsers = function() {
       matches : santaApp.finalMatch
     },
     success: function(data){
-      // here we check if the emails send propertly 
+      // check to see if the emails send propertly 
       console.log(data); // did it work?
     },
     dataType: 'json'
@@ -124,7 +113,7 @@ santaApp.init = function() {
     };
   });
 
-  $('button.end').click(function(){
+  $('button.submit').click(function(){
     santaApp.matchAllUsers();
     alert('Wait for the magic!');
   })

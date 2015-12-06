@@ -12,28 +12,26 @@ body {
   margin: 0 auto;
 }
 
-header {
-  padding: 40px 0 20px 0;
-}
 header p {
   letter-spacing: 1px;
   text-align: center;
   font-size: 2.4rem;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 h1 {
   font-family: 'Lustria', serif;
   text-align: center;
   font-size: 9.4rem;
-  margin: 30px 0 0 0;
+  margin: 80px 0 0 0;
   color: #ff0000;
   line-height: 1em;
   letter-spacing: 7px;
   position: relative;
 }
 
-button {
+button.submit {
   margin: 40px auto;
   display: block;
   padding: 15px 45px;
@@ -43,35 +41,61 @@ button {
   color: #fff;
   letter-spacing: 2px;
   border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.25s;
 }
-
-button.end {
-  clear: both;
+button.submit:hover {
+  background-color: rgba(215, 6, 6, 0.88);
 }
 
 .input-stuff {
   width: 100%;
+  text-align: center;
 }
 .input-stuff p {
   font-size: 2rem;
 }
 
-form {
-  float: left;
-  width: 40%;
-}
 form input {
-  padding: 15px 50px 15px 15px;
+  padding: 15px 15px 15px 15px;
   font-size: 2rem;
+  width: 80%;
 }
 form input:focus {
   outline: 4px auto #ff0000;
 }
 
-.p-list {
-  width: 36%;
-  float: left;
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #919191;
 }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #919191;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #919191;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #919191;
+}
+
+span.addAnother {
+  font-size: 47px;
+  line-height: 5px;
+  position: relative;
+  right: 52px;
+  top: 7px;
+  color: #919191;
+}
+
 .p-list p {
   background: #ff0000;
   color: #fff;
@@ -81,11 +105,16 @@ form input:focus {
 .p-list ul {
   list-style: none;
   font-size: 2rem;
-  padding-left: 15px;
+  padding-left: 0;
   background: #fff;
   margin-top: 0;
-  padding-top: 20px;
+  /* padding-top: 43px; */
+  border: 1px solid #d9d9d9;
 }
 .p-list ul li {
-  padding: 15px 0 15px 0;
+  padding: 15px;
+  text-align: left;
+}
+.p-list ul li:nth-child(even) {
+  background-color: #f9f9f9;
 }

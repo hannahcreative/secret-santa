@@ -13,7 +13,7 @@
     $html = "<p>Hey ". $match['giver'] ." you have " . $match['receiver'] . "! Nice!</p>";
 
     $message = array(
-        'subject' => 'Test message',
+        'subject' => 'Your Secret Santa match is......',
         'from_email' => 'hello@hannahallen.ca',
         'html' => $html,
         'to' => array(array('email' => $match['giver'])),
