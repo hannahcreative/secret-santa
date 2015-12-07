@@ -4,7 +4,7 @@ font-size: 62.5%;
 
 body {
   font-family: 'Lato', sans-serif;
-  background-image: url('i/tile2.svg');
+  background-image: url('i/tile3.svg');
 }
 
 .wrapper {
@@ -12,18 +12,12 @@ body {
   margin: 0 auto;
 }
 
-header {
- // padding: 40px 0 20px 0;
- // margin-bottom: 60px;
- // position: relative;
-
-  p {
-      letter-spacing: 1px;
-      text-align: center;
-      font-size: 2.4rem;
-      font-weight: bold;
-      margin-top: 5px;
-    }
+header p {
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 h1 {
@@ -55,44 +49,54 @@ button.submit {
     }
 }
 
-// button.end {
-//   clear:both;
-// }
-
 .input-stuff {
   width: 100%;
   text-align: center;
-  // display: none;
 
     p {
       font-size: 2rem;
-      // text-align: center;
     }
 }
 
 form {
-  // text-align: center;
-  // padding-bottom: 20px;
-    // float: left;
-    // width: 40%;
-    position: relative;
+  overflow: hidden;
+  position: relative;
+  left: 30px;
   
-  input {
-    padding: 15px 15px 15px 15px;
+  input[type="email"] {
+    padding: 12.5px;
     font-size: 2rem;
     width: 80%;
-    // width: 100%;
-    // background: url('i/plus.png') no-repeat;
-    // background-position: right;
-    // float: left;
+    float: left;
 
     &:focus {
       outline: 4px auto #ff0000;
     }
   }
+
+  input[type="image"] {
+    border: 1px solid #d9d9d9;
+    position: relative;
+    float: left;
+    border-left: none;
+
+    &:focus {
+      outline:none;
+    }
+  }
  }
 
- ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+//  input:-webkit-autofill {
+//   background: #fff!important;
+//  }
+
+// -webkit-text-fill-color: yellow !important;
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background: #fff!important;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #919191;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -107,9 +111,12 @@ form {
    color:    #919191;
 }
 
+li.placeholder {
+  color:#919191;
+}
+
  span.addAnother {
     font-size: 47px;
-    /* line-height: 5px; */
     position: absolute;
     right: 52px;
     bottom: 4px;
@@ -117,7 +124,7 @@ form {
  }
 
  .p-list {
-     width: 85%;
+    width: 91%;
     margin: 0 auto;
 
     p {
@@ -129,20 +136,19 @@ form {
 
     ul {
       list-style: none;
-    font-size: 2rem;
-    padding-left: 0;
-    background: #fff;
-    margin-top: 0;
-    /* padding-top: 43px; */
-    border: 1px solid #d9d9d9;
+      font-size: 2rem;
+      padding-left: 0;
+      background: #fff;
+      margin-top: 0;
+      border: 1px solid #d9d9d9;
 
-          li{
-            padding: 15px;
-            text-align: left;
+        li{
+          padding: 15px;
+          text-align: left;
 
-            &:nth-child(even) {
-              background-color: #f9f9f9
-            }
+          &:nth-child(even) {
+            background-color: #f9f9f9
           }
+        }
     }
  }

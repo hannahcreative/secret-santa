@@ -10,11 +10,11 @@
 
   foreach ($matches as $match) {
 
-    $html = "<p>Hey ". $match['giver'] ." you have " . $match['receiver'] . "! Nice!</p>";
+    $html = "<p>Hey ". $match['giver'] ." you have " . $match['receiver'] . " for your Secret Santa! Nice!</p>";
 
     $message = array(
         'subject' => 'Your Secret Santa match is......',
-        'from_email' => 'hello@hannahallen.ca',
+        'from_email' => 'Secret Santa',
         'html' => $html,
         'to' => array(array('email' => $match['giver'])),
     );

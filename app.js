@@ -78,33 +78,20 @@ santaApp.mailUsers = function() {
   });
 }
 
-santaApp.reSize = function() {
-  // $('header').css({ scale: 0.5 });
-  // $('header').css({ translate: [-1000,-100] });
-    $('h1').animate({
-      right: '500px',
-      // right: '0',
-      fontSize: '4rem',
-      top : '0',
-      marginTop : '0'
-    }, 'slow');
-};
-
+// santaApp.reSize = function() {
+//   // $('header').css({ scale: 0.5 });
+//   // $('header').css({ translate: [-1000,-100] });
+//     $('h1').animate({
+//       right: '500px',
+//       // right: '0',
+//       fontSize: '4rem',
+//       top : '0',
+//       marginTop : '0'
+//     }, 'slow');
+// };
 
 santaApp.init = function() {
-
-  // $('button.start').click(function() {
-  //   $('.input-stuff').slideDown('slow');
-  //   $('header p').hide();
-  //   $('button.start').toggle();
-  //   santaApp.reSize();
-  //   // $('header').css({ scale: 0.5 });
-  //   $
-  // }); 
-
-  // $('.p-list').hide();
-
-  $('form').on('submit', function(event) {
+   $('form').on('submit', function(event) {
     event.preventDefault();
       if ($('input').val() !== '') {
         var addName = $('input').val();
@@ -112,6 +99,7 @@ santaApp.init = function() {
          $('ul').append("<li>" + addName + "</li>");
         santaApp.names.push(addName);
         $('input').val('');
+        $('.placeholder').hide();     
     };
   });
 
