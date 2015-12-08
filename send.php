@@ -14,7 +14,8 @@
 
     $message = array(
         'subject' => 'Your Secret Santa match is......',
-        'from_email' => 'Secret Santa',
+        'from_name' => 'Santa Clause',
+        'from_email' => 'no-reply@hannahallen.ca',
         'html' => $html,
         'to' => array(array('email' => $match['giver'])),
     );
